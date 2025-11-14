@@ -14,7 +14,7 @@ let app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin:"srv-d4bfjff5r7bs73950d8g",
+    origin:"ssrv-d4bfogn5r7bs739542r0",
     credentials:true
 }))
 
