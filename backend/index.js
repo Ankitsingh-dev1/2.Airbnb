@@ -12,6 +12,8 @@ let port = process.env.PORT || 6000
 
 let app = express()
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+
 app.use(cookieParser())
 app.use(cors({
     origin:"https://two-airbnb-frontend-4qqe.onrender.com",
