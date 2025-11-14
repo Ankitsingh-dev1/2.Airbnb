@@ -83,17 +83,23 @@ function ListingContext({children}) {
         }
         
      }
-     const handleSearch = async (data) => {
-        try {
-            let result = await axios.get(serverUrl + `/api/listing/search?query=${data}`)
-            setSearchData(result.data)
-        } catch (error) {
-            setSearchData(null)
-            console.log(error)
-            
-        }
-        
-     }
+    const handleSearch = async (data) => {
+
+    // ⭐ Same structure, only ONE safe condition added
+    if (!data || data.trim() === "") {
+        setSearchData([]);
+        return;
+    }
+
+    try {
+        let result = await axios.get(serverUrl + `/api/listing/search?query=${data}`);
+        setSearchData(result.data);
+    } catch (error) {
+        setSearchData(null);
+        console.log(error);
+    }
+};
+
 
      const getListing = async () => {
         try {
