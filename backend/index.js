@@ -14,9 +14,9 @@ let app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin:"ssrv-d4bfogn5r7bs739542r0",
+    origin:"https://two-airbnb-frontend-4qqe.onrender.com",
     credentials:true
-}))
+}));
 
 app.use("/api/auth", authRouter )
 app.use("/api/user", userRouter )
